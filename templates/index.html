@@ -1,0 +1,72 @@
+{%load static%}
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Online Suggestion Box</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{%static 'main.css'%}" />
+		<noscript><link rel="stylesheet" href="{%static 'noscript.css'%}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						{% load static %}
+						
+						<h1>Welcome, {{ user.get_username }}</h1>
+						<p>Thanks for logging in.<br />
+						</p>
+					</header>
+
+				<!-- Nav -->
+				{%load static%}
+					<nav id="nav">
+						<ul>
+							<li><a href="{% url 'profile' %}" class="active">Profile</a></li>
+							<li><a href="{% url 'suggestpage' %}">Suggest Page</a></li>
+							<li><a href="{% url 'logout' %}">Logout</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Posts</h2>
+										</header>
+										{% for d in post %}
+										 <div > <h3 font-weight: bold>{{d.title}} -- posted by {{ d.user }} {{d.date|timesince}} ago</h3></div>
+										 <p style="padding:2px 6px 4px 6px; color: black; background-color: #eeeeee; border: #dddddd 2px solid">
+											 {{ d.text }} <br>
+											 
+											 {% endfor %}
+											</p>
+									</div>
+									</div>
+							</section>
+
+		<!-- Scripts -->
+			<script src="{%static 'jquery.min.js'%}"></script>
+			<script src="{%static 'jquery.scrollex.min.js'%}"></script>
+			<script src="{%static 'jquery.scrolly.min.js'%}"></script>
+			<script src="{%static 'browser.min.js'%}"></script>
+			<script src="{%static 'breakpoints.min.js'%}"></script>
+			<script src="{%static 'util.js'%}"></script>
+			<script src="{%static 'main.js'%}"></script>
+
+	</body>
+</html>

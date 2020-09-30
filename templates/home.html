@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <title>online suggestion box</title>
+  </head>
+  <body>
+    <main>
+      <section class="landing">
+        <nav>
+          <h1 id="logo">Online Suggestion Box</h1>
+          <ul class="nav-links">
+            <a href="{% url 'signup' %}">Signup</a>
+  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'guideline' %}" class="right">Community Guidelines</a>
+          </ul>
+        </nav>
+        <h2 class="big-text">GVPCEW</h2>
+      </section>
+    </main>
+    <div class="intro">
+      <div class="intro-text">
+        <h1 class="hide">
+          <span class="text">A Place</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">To Make Your</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">Voice Heard.</span>
+        </h1>
+      </div>
+    </div>
+    <div class="slider"></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    {%load static%}
+    <script src="{% static 'app.js' %}"></script>
+  </body>
+</html>
